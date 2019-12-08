@@ -8,7 +8,7 @@ High performance ~~multithreaded~~ armstrong numbers
 $ cargo run -- --help
 ```
 
-This program accepts input in 3 different ways:
+This program accepts input in 4 different ways:
 
 1. Interactive
 
