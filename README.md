@@ -12,6 +12,8 @@ This program accepts input in 3 different ways:
 
 1. Interactive
 
+What is surrounded by `**` is typed in by the user.
+
 ```bash
 $ cargo run
 Please enter a number to be tested: **9**
