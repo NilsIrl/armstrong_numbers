@@ -1,2 +1,2 @@
 # armstrong_numbers
-High performance armstrong numbers
+High performance multithreaded armstrong numbers
