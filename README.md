@@ -10,28 +10,65 @@ $ cargo run -- --help
 
 This program accepts input in 3 different ways:
 
-1. Standard input
+1. Interactive
 
 ```bash
 $ cargo run
-9
-9 is an Armstrong numbers.
-10
-10 isn't Armstrong numbers.
-153
-153 is an Armstrong numbers.
-154
-154 isn't Armstrong numbers.
+Please enter a number to be tested: **9**
+9 is an Armstrong number.
+Please enter a number to be tested: **10**
+10 isn't Armstrong number.
+Please enter a number to be tested: **153**
+153 is an Armstrong number.
+Please enter a number to be tested: **154**
+154 isn't an Armstrong number.
+Please enter a number to be tested: **<C-d>**
+Goodbye 👋
 ```
 
-2. Arguments
+`CTRL+D` cuts standard input causing the program to stop, like you would with
+other interactive UNIX programs.
+
+2. Standard input
 
 ```bash
-$ cargo run -- 11 $(seq 0 1000)
+$ cargo run <<< "$RANDOM"
+29090 isn't an Armstrong number.
+$ cargo run <<< "$RANDOM"
+4173 isn't an Armstrong number.
+$ cargo run <<< "$RANDOM"
+7377 isn't an Armstrong number.
+$ cargo run <<< "$RANDOM"
+8346 isn't an Armstrong number.
+$ cargo run <<< "$RANDOM"
+11985 isn't an Armstrong number.
+$ cargo run <<< "$RANDOM"
+16056 isn't an Armstrong number.
+$ cargo run <<< "$RANDOM"
+19356 isn't an Armstrong number.
+$ cargo run <<< "$RANDOM"
+2463 isn't an Armstrong number.
+$ cargo run <<< "$RANDOM"
+10556 isn't an Armstrong number.
+$ cargo run <<< "$RANDOM"
+26870 isn't an Armstrong number.
+$ cargo run <<< "$RANDOM"
+17655 isn't an Armstrong number.
+```
+
+3. Arguments
+
+```bash
+$ cargo run -- 9 10 153 154
+9 is an Armstrong number.
+10 isn't an Armstrong number.
+153 is an Armstrong number.
+154 isn't an Armstrong number.
+$ cargo run -- $(seq 0 1000)
 ...
 ```
 
-3. Files
+4. Files
 
 ```bash
 $ seq 0 100000 > file.txt
